@@ -2,7 +2,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { FC } from 'react';
 
 import ErrorPage from './pages/ErrorPage';
-import MainPage from './pages/MainPage/MainPage';
+import MainPage from './pages/MainPage';
 import NotFound from './pages/NotFound';
 import FormPage from './pages/FormPage';
 
