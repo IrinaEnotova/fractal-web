@@ -1,0 +1,25 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.select {
+  max-width: 400px;
+  padding: 10px;
+  font-family: 'TTTravels', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--black-alpha16);
+
+  appearance: none;
+  overflow: hidden;
+  background: url('../../../assets/shevron-down-icon.svg') no-repeat right 10px center;
+}

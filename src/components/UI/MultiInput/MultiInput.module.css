@@ -1,0 +1,37 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.input {
+  flex-grow: 1;
+  max-width: 400px;
+  padding: 10px;
+  font-family: 'TTTravels', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--black-alpha16);
+}
+
+.deleteItem {
+  cursor: pointer;
+}
+
+.addBtn {
+  padding: 12px;
+  height: 44px;
+}
