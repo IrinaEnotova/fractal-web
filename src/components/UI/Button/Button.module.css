@@ -1,0 +1,27 @@
+.button {
+  width: fit-content;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.primary {
+  color: var(--white);
+  background-color: var(--purple);
+  border: none;
+}
+
+.primary:hover,
+.secondary:hover {
+  background-color: var(--purple-hover);
+}
+
+.secondary {
+  color: var(--purple);
+  border: 1px solid var(--purple);
+}
