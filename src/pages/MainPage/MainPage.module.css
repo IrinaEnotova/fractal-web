@@ -1,0 +1,8 @@
+.wrapper {
+  flex-grow: 1;
+  max-width: 900px;
+  min-height: 704px;
+  padding: 25px 24px;
+  border-radius: 12px 12px 0px 0px;
+  background-color: var(--white);
+}
