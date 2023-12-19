@@ -4,7 +4,7 @@ import { FC } from 'react';
 import ErrorPage from './pages/ErrorPage';
 import MainPage from './pages/MainPage';
 import NotFound from './pages/NotFound';
-import FormPage from './pages/FormPage';
+import ProfilePage from './pages/ProfilePage';
 
 const routes = [
   {
@@ -13,8 +13,8 @@ const routes = [
     errorElement: <ErrorPage />,
   },
   {
-    path: '/form',
-    element: <FormPage />,
+    path: '/profile',
+    element: <ProfilePage />,
     errorElement: <ErrorPage />,
   },
   {

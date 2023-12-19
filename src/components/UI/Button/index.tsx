@@ -7,12 +7,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   appearance: 'primary' | 'secondary';
 }
 
-export default function Button({ children, appearance, ...props }: ButtonProps) {
+export default function Button({ children, className, appearance, ...props }: ButtonProps) {
   return (
     <button
       {...props}
       className={cls(
         styles.button,
+        className,
         appearance === 'primary' && styles.primary,
         appearance === 'secondary' && styles.secondary
       )}

@@ -16,12 +16,17 @@
   border: none;
 }
 
-.primary:hover,
+.primary:hover {
+  background-color: var(--purple-hover);
+}
+
 .secondary:hover {
+  color: var(--white);
   background-color: var(--purple-hover);
 }
 
 .secondary {
   color: var(--purple);
+  background-color: transparent;
   border: 1px solid var(--purple);
 }

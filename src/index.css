@@ -16,6 +16,8 @@
   --purple: #5558fa;
   --purple-hover: #8f91f7;
   --text-white-mode: #333333;
+  --dot-color: #a6a6a6;
+  --line-color: #ebebeb;
 }
 
 @font-face {

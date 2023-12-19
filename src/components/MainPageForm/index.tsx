@@ -3,10 +3,13 @@ import Button from '../UI/Button';
 import Input from '../UI/Input';
 import styles from './MainPageForm.module.css';
 import { FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function MainPageForm() {
+  const navigate = useNavigate();
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
+    navigate('/profile');
   };
 
   return (
