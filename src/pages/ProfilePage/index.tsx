@@ -29,7 +29,7 @@ export default function ProfilePage() {
 
   return (
     <div className={styles.wrapper}>
-      <Stepper steps={steps} activeStep={activeStep} changeActiveStep={changeActiveStep} />
+      <Stepper activeStep={activeStep} />
       {activeComponent}
     </div>
   );
