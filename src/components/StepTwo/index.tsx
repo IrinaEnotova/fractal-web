@@ -1,3 +1,4 @@
+import { FormEvent } from 'react';
 import Button from '../UI/Button';
 import Checkbox from '../UI/Checkbox';
 import MultiInput from '../UI/MultiInput';
@@ -9,8 +10,12 @@ type StepTwoProps = {
 };
 
 export default function StepTwo({ changeActiveStep }: StepTwoProps) {
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+  };
+
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.inputs}>
         <MultiInput />
         <Checkbox />

@@ -16,7 +16,7 @@ export default function MultiInput({ ...props }: MultiInputProps) {
 
   const addItem = (event: FormEvent) => {
     event.preventDefault();
-    seInputNumber([...inputNumbers, inputNumbers.length + 1]);
+    seInputNumber([...inputNumbers, Math.max(...inputNumbers) + 1]);
   };
 
   return (
@@ -42,8 +42,8 @@ export default function MultiInput({ ...props }: MultiInputProps) {
             />
           </div>
         ))}
-        <Button className={styles.addBtn} appearance="secondary">
-          <img onClick={addItem} src={plusIcon} alt="+" />
+        <Button onClick={addItem} className={styles.addBtn} appearance="secondary">
+          <img src={plusIcon} alt="+" />
         </Button>
       </label>
     </div>

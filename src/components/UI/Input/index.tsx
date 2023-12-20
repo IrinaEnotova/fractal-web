@@ -18,8 +18,8 @@ export default function Input({ label, ...props }: InputProps) {
           type="text"
           autoComplete="off"
         />
+        <div className={styles.tip}>Tip</div>
       </label>
-      {/* <div className="error-message">{errors.name?.message}</div> */}
     </div>
   );
 }

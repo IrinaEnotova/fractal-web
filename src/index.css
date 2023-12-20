@@ -1,5 +1,4 @@
 :root {
-  height: 100vh;
   padding: 24px;
   background-color: var(--bg-color);
   font-family: 'TTTravels', Arial, Helvetica, sans-serif;
@@ -18,6 +17,8 @@
   --text-white-mode: #333333;
   --dot-color: #a6a6a6;
   --line-color: #ebebeb;
+  --success: #05ae7126;
+  --cancel: #e84e5826;
 }
 
 @font-face {
