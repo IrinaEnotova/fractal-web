@@ -23,3 +23,11 @@
   overflow: hidden;
   background: url('../../../assets/shevron-down-icon.svg') no-repeat right 10px center;
 }
+
+.tip {
+  height: 16px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}

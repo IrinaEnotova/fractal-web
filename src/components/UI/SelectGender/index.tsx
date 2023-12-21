@@ -1,12 +1,29 @@
+import { SelectHTMLAttributes } from 'react';
 import cls from '../../../utils/classnames';
 import styles from './Select.module.css';
+import { FieldErrors, UseFormRegister } from 'react-hook-form';
 
-export default function SelectGender() {
+interface SelectGenderProps extends SelectHTMLAttributes<HTMLSelectElement> {
+  register: UseFormRegister<{
+    nickname: string;
+    firstName: string;
+    lastName: string;
+    gender: string;
+  }>;
+  errors: FieldErrors<{
+    nickname: string;
+    firstName: string;
+    lastName: string;
+    gender: string;
+  }>;
+}
+
+export default function SelectGender({ register, errors }: SelectGenderProps) {
   return (
     <div>
       <label className={styles.label}>
         <span>Пол</span>
-        <select id="field-sex" className={cls(styles.select, 'error-input')}>
+        <select {...register('gender')} id="field-sex" className={cls(styles.select, 'error-input')}>
           <option value="">Не выбрано</option>
           <option value="male" id="field-sex-option-man">
             мужской
@@ -15,8 +32,8 @@ export default function SelectGender() {
             женский
           </option>
         </select>
+        <div className={styles.tip}>{errors.gender?.message}</div>
       </label>
-      {/* <div className="error-message">{errors.gender?.message}</div> */}
     </div>
   );
 }

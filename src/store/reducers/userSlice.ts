@@ -35,8 +35,17 @@ export const userSlice = createSlice({
       state.phone = action.payload.phone;
       state.email = action.payload.email;
     },
+    setStepOneInfo(
+      state,
+      action: PayloadAction<{ nickname: string; firstName: string; lastName: string; gender: Genders | '' }>
+    ) {
+      state.nickname = action.payload.nickname;
+      state.firstName = action.payload.firstName;
+      state.lastName = action.payload.lastName;
+      state.gender = action.payload.gender;
+    },
   },
 });
 
 export default userSlice.reducer;
-export const { setMainInfo } = userSlice.actions;
+export const { setMainInfo, setStepOneInfo } = userSlice.actions;
