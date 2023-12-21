@@ -4,7 +4,7 @@ import Checkbox from '../UI/Checkbox';
 import MultiInput from '../UI/MultiInput';
 import Radio from '../UI/Radio';
 import styles from './StepTwo.module.css';
-import { useAppDispatch } from '../../store/hooks/reduxHook';
+import { useAppDispatch, useAppSelector } from '../../store/hooks/reduxHook';
 import { setAdvantages } from '../../store/reducers/userSlice';
 
 type StepTwoProps = {
@@ -13,11 +13,21 @@ type StepTwoProps = {
 
 export default function StepTwo({ changeActiveStep }: StepTwoProps) {
   const form = useRef(null);
-  const [inputs, setInputs] = useState([
+  const { advantages } = useAppSelector((state) => state.userReducer);
+  let currentAdvantages;
+  if (advantages.length >= 1) {
+    currentAdvantages = advantages.map((advantageText, idx) => {
+      console.log({ id: String(idx + 1), text: advantageText });
+      return { id: String(idx + 1), text: advantageText };
+    });
+  }
+  const defaultAdvantages = [
     { id: '1', text: '' },
     { id: '2', text: '' },
     { id: '3', text: '' },
-  ]);
+  ];
+
+  const [inputs, setInputs] = useState(currentAdvantages ? currentAdvantages : defaultAdvantages);
   const dispatch = useAppDispatch();
 
   const changeInputs = (value: { id: string; text: string }[]) => {
