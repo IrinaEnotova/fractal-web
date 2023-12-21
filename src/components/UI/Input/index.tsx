@@ -4,9 +4,10 @@ import styles from './Input.module.css';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
+  className?: string;
 }
 
-export default function Input({ label, ...props }: InputProps) {
+export default function Input({ label, className, ...props }: InputProps) {
   return (
     <div>
       <label className={styles.label}>
@@ -14,11 +15,11 @@ export default function Input({ label, ...props }: InputProps) {
         <input
           {...props}
           // {...register('name')}
-          className={cls(styles.input, 'error-input')}
+          className={cls(styles.input, className)}
           type="text"
           autoComplete="off"
         />
-        <div className={styles.tip}>Tip</div>
+        <div className={styles.tip}></div>
       </label>
     </div>
   );

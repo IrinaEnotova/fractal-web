@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { Genders } from '../../enums/genders';
 
 type InitialStateType = {
@@ -30,8 +30,13 @@ const initialState: InitialStateType = {
 export const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    setMainInfo(state, action: PayloadAction<{ phone: string; email: string }>) {
+      state.phone = action.payload.phone;
+      state.email = action.payload.email;
+    },
+  },
 });
 
 export default userSlice.reducer;
-// export const {} = userSlice.actions;
+export const { setMainInfo } = userSlice.actions;
