@@ -1,7 +1,9 @@
 import { TextareaHTMLAttributes } from 'react';
-import cls from '../../../utils/classnames';
-import styles from './Textarea.module.css';
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
+
+import cls from '../../../utils/classnames';
+
+import styles from './Textarea.module.css';
 
 interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label: string;

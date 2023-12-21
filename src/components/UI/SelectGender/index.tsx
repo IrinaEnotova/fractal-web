@@ -1,7 +1,9 @@
 import { SelectHTMLAttributes } from 'react';
-import cls from '../../../utils/classnames';
-import styles from './Select.module.css';
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
+
+import cls from '../../../utils/classnames';
+
+import styles from './Select.module.css';
 
 interface SelectGenderProps extends SelectHTMLAttributes<HTMLSelectElement> {
   register: UseFormRegister<{

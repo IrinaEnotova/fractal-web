@@ -1,7 +1,9 @@
 import { InputHTMLAttributes } from 'react';
-import cls from '../../../utils/classnames';
-import styles from './Input.module.css';
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
+
+import cls from '../../../utils/classnames';
+
+import styles from './Input.module.css';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   inputName: 'nickname' | 'firstName' | 'lastName';

@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import Button from '../UI/Button';
-import styles from './StepThree.module.css';
-import Textarea from '../UI/Textarea';
-import ResultWindow from '../UI/ResultWindow';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+
+import Button from '../UI/Button';
+import Textarea from '../UI/Textarea';
+import ResultWindow from '../UI/ResultWindow';
+import Loader from '../UI/Loader';
 import stepThreeSchema from '../../validations/stepThreeValidation';
 import { useAppDispatch, useAppSelector } from '../../store/hooks/reduxHook';
 import { setDescription } from '../../store/reducers/userSlice';
-import Loader from '../UI/Loader';
+
+import styles from './StepThree.module.css';
 
 type StepThreeProps = {
   changeActiveStep: (step: number) => void;

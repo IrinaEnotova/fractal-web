@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
+
 import successIcon from '../../../assets/success-icon.svg';
 import cancelIcon from '../../../assets/cancel-icon.svg';
 import closeIcon from '../../../assets/close-icon.svg';
 
-import styles from './ResultWindow.module.css';
 import Button from '../Button';
-import { Link } from 'react-router-dom';
+
+import styles from './ResultWindow.module.css';
 
 interface ResultWindowProps {
   closeModal: () => void;

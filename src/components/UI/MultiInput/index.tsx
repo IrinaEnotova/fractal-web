@@ -1,10 +1,13 @@
 import { FormEvent, InputHTMLAttributes } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+
 import cls from '../../../utils/classnames';
+import Button from '../Button';
+
 import deleteIcon from '../../../assets/delete-icon.svg';
 import plusIcon from '../../../assets/plus-icon.svg';
+
 import styles from './MultiInput.module.css';
-import Button from '../Button';
 
 interface MultiInputProps extends InputHTMLAttributes<HTMLInputElement> {
   inputs: { id: string; text: string }[];

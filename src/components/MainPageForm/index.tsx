@@ -1,13 +1,15 @@
-import PhoneInput from '../UI/PhoneInput';
-import Button from '../UI/Button';
-import styles from './MainPageForm.module.css';
 import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ValidationError } from 'yup';
+
+import PhoneInput from '../UI/PhoneInput';
+import Button from '../UI/Button';
 import EmailInput from '../UI/EmailInput';
 import { useAppDispatch, useAppSelector } from '../../store/hooks/reduxHook';
 import { setMainInfo } from '../../store/reducers/userSlice';
 import mainPageSchema from '../../validations/mainPageValidation';
-import { ValidationError } from 'yup';
+
+import styles from './MainPageForm.module.css';
 
 export default function MainPageForm() {
   const { email } = useAppSelector((state) => state.userReducer);

@@ -1,5 +1,7 @@
 import { InputHTMLAttributes } from 'react';
+
 import cls from '../../../utils/classnames';
+
 import styles from './EmailInput.module.css';
 
 interface EmailInputProps extends InputHTMLAttributes<HTMLInputElement> {

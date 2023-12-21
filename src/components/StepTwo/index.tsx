@@ -1,11 +1,13 @@
 import { FormEvent, useRef, useState } from 'react';
+
 import Button from '../UI/Button';
 import Checkbox from '../UI/Checkbox';
 import MultiInput from '../UI/MultiInput';
 import Radio from '../UI/Radio';
-import styles from './StepTwo.module.css';
 import { useAppDispatch, useAppSelector } from '../../store/hooks/reduxHook';
 import { setAdvantages } from '../../store/reducers/userSlice';
+
+import styles from './StepTwo.module.css';
 
 type StepTwoProps = {
   changeActiveStep: (step: number) => void;

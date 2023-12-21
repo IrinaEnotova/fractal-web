@@ -1,15 +1,17 @@
 import { FormEvent } from 'react';
-import Button from '../UI/Button';
-import Input from '../UI/Input';
-import styles from './StepOne.module.css';
 import { useNavigate } from 'react-router-dom';
-import SelectGender from '../UI/SelectGender';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+
+import Button from '../UI/Button';
+import Input from '../UI/Input';
+import SelectGender from '../UI/SelectGender';
 import stepOneSchema from '../../validations/stepOneValidation';
 import { useAppDispatch, useAppSelector } from '../../store/hooks/reduxHook';
 import { setStepOneInfo } from '../../store/reducers/userSlice';
 import { Genders } from '../../enums/genders';
+
+import styles from './StepOne.module.css';
 
 type StepOneProps = {
   changeActiveStep: (step: number) => void;

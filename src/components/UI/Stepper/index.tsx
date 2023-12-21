@@ -1,4 +1,5 @@
 import cls from '../../../utils/classnames';
+
 import styles from './Stepper.module.css';
 
 type StepperProps = {

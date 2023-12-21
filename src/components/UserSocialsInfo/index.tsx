@@ -1,4 +1,5 @@
 import folderIcon from '../../assets/folder-icon.svg';
+
 import styles from './UserSocialsInfo.module.css';
 
 export default function UserSocialsInfo() {

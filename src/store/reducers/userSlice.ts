@@ -1,4 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+
 import { Genders } from '../../enums/genders';
 
 type InitialStateType = {

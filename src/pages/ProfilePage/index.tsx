@@ -1,9 +1,11 @@
 import { useMemo, useState } from 'react';
+
 import Stepper from '../../components/UI/Stepper';
-import styles from './ProfilePage.module.css';
 import StepOne from '../../components/StepOne';
 import StepTwo from '../../components/StepTwo';
 import StepThree from '../../components/StepThree';
+
+import styles from './ProfilePage.module.css';
 
 export default function ProfilePage() {
   const [activeStep, setActiveStep] = useState(1);
