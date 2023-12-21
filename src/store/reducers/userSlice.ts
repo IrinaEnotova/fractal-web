@@ -44,8 +44,11 @@ export const userSlice = createSlice({
       state.lastName = action.payload.lastName;
       state.gender = action.payload.gender;
     },
+    setDescription(state, action: PayloadAction<{ description: string }>) {
+      state.description = action.payload.description;
+    },
   },
 });
 
 export default userSlice.reducer;
-export const { setMainInfo, setStepOneInfo } = userSlice.actions;
+export const { setMainInfo, setStepOneInfo, setDescription } = userSlice.actions;
