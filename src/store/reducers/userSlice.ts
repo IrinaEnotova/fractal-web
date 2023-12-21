@@ -47,8 +47,11 @@ export const userSlice = createSlice({
     setDescription(state, action: PayloadAction<{ description: string }>) {
       state.description = action.payload.description;
     },
+    setAdvantages(state, action: PayloadAction<{ advantages: string[] }>) {
+      state.advantages = action.payload.advantages;
+    },
   },
 });
 
 export default userSlice.reducer;
-export const { setMainInfo, setStepOneInfo, setDescription } = userSlice.actions;
+export const { setMainInfo, setStepOneInfo, setDescription, setAdvantages } = userSlice.actions;

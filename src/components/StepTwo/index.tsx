@@ -1,9 +1,11 @@
-import { FormEvent, useRef } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import Button from '../UI/Button';
 import Checkbox from '../UI/Checkbox';
 import MultiInput from '../UI/MultiInput';
 import Radio from '../UI/Radio';
 import styles from './StepTwo.module.css';
+import { useAppDispatch } from '../../store/hooks/reduxHook';
+import { setAdvantages } from '../../store/reducers/userSlice';
 
 type StepTwoProps = {
   changeActiveStep: (step: number) => void;
@@ -11,17 +13,34 @@ type StepTwoProps = {
 
 export default function StepTwo({ changeActiveStep }: StepTwoProps) {
   const form = useRef(null);
+  const [inputs, setInputs] = useState([
+    { id: '1', text: '' },
+    { id: '2', text: '' },
+    { id: '3', text: '' },
+  ]);
+  const dispatch = useAppDispatch();
+
+  const changeInputs = (value: { id: string; text: string }[]) => {
+    setInputs(value);
+  };
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-
+    const advantages = inputs.reduce((acc: string[], input) => {
+      if (input.text) {
+        acc.push(input.text);
+        return acc;
+      }
+      return acc;
+    }, []);
+    dispatch(setAdvantages({ advantages }));
     changeActiveStep(3);
   };
 
   return (
     <form ref={form} className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.inputs}>
-        <MultiInput />
+        <MultiInput inputs={inputs} changeInputs={changeInputs} />
         <Checkbox />
         <Radio />
       </div>

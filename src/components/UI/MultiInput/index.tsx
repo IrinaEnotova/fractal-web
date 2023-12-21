@@ -1,4 +1,4 @@
-import { FormEvent, InputHTMLAttributes, useState } from 'react';
+import { FormEvent, InputHTMLAttributes } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import cls from '../../../utils/classnames';
 import deleteIcon from '../../../assets/delete-icon.svg';
@@ -6,22 +6,19 @@ import plusIcon from '../../../assets/plus-icon.svg';
 import styles from './MultiInput.module.css';
 import Button from '../Button';
 
-interface MultiInputProps extends InputHTMLAttributes<HTMLInputElement> {}
+interface MultiInputProps extends InputHTMLAttributes<HTMLInputElement> {
+  inputs: { id: string; text: string }[];
+  changeInputs: (value: { id: string; text: string }[]) => void;
+}
 
-export default function MultiInput({ ...props }: MultiInputProps) {
-  const [inputs, setInputs] = useState([
-    { id: '1', text: '' },
-    { id: '2', text: '' },
-    { id: '3', text: '' },
-  ]);
-
+export default function MultiInput({ inputs, changeInputs, ...props }: MultiInputProps) {
   const deleteItem = (itemNumber: string) => {
-    setInputs(inputs.filter((input) => input.id !== itemNumber));
+    changeInputs(inputs.filter((input) => input.id !== itemNumber));
   };
 
   const addItem = (event: FormEvent) => {
     event.preventDefault();
-    setInputs([...inputs, { id: uuidv4(), text: '' }]);
+    changeInputs([...inputs, { id: uuidv4(), text: '' }]);
   };
 
   return (
@@ -34,7 +31,7 @@ export default function MultiInput({ ...props }: MultiInputProps) {
               {...props}
               value={inputs.find((input) => item.id === input.id)?.text}
               onChange={(event) => {
-                setInputs(
+                changeInputs(
                   inputs.reduce((acc: { id: string; text: string }[], input) => {
                     if (input.id === item.id) {
                       input.text = event.target.value;

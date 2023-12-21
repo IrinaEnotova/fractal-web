@@ -15,7 +15,9 @@ type StepThreeProps = {
 };
 
 export default function StepThree({ changeActiveStep }: StepThreeProps) {
-  const { phone, email, nickname, firstName, lastName, gender } = useAppSelector((state) => state.userReducer);
+  const { phone, email, nickname, firstName, lastName, gender, advantages } = useAppSelector(
+    (state) => state.userReducer
+  );
   const [isSuccess, setIsSuccess] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const { description } = useAppSelector((state) => state.userReducer);
@@ -52,7 +54,7 @@ export default function StepThree({ changeActiveStep }: StepThreeProps) {
       setTimeout(() => {
         if (randomNumber > 50) {
           setIsSuccess(true);
-          resolve({ phone, email, nickname, firstName, lastName, gender, description });
+          resolve({ phone, email, nickname, firstName, lastName, gender, description, advantages });
           setIsModalOpen(true);
         } else {
           setIsSuccess(false);
