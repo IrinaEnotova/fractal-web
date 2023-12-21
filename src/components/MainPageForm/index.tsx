@@ -46,8 +46,6 @@ export default function MainPageForm() {
     setEmail(value);
   };
 
-  console.log(errorsData);
-
   return (
     <form className={styles.form} onSubmit={handleFormSubmit}>
       <div className={styles.inputWrapper}>

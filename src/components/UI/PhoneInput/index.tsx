@@ -33,7 +33,6 @@ export default function PhoneInput({ errors, changePhone }: PhoneInputProps) {
         type="text"
         ref={inputCard}
         onChange={handleChange}
-        required
         placeholder="+7 999 999-99-99"
       />
       <div className={styles.tip}>{errors.phone}</div>

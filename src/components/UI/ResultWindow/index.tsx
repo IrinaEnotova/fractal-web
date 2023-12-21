@@ -8,11 +8,10 @@ import { Link } from 'react-router-dom';
 
 interface ResultWindowProps {
   closeModal: () => void;
+  isSuccess: boolean;
 }
 
-export default function ResultWindow({ closeModal }: ResultWindowProps) {
-  const isSuccess = false;
-
+export default function ResultWindow({ isSuccess, closeModal }: ResultWindowProps) {
   return (
     <div className={styles.dimming}>
       <div className={styles.wrapper}>

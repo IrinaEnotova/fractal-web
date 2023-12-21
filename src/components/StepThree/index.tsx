@@ -8,12 +8,16 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import stepThreeSchema from '../../validations/stepThreeValidation';
 import { useAppDispatch, useAppSelector } from '../../store/hooks/reduxHook';
 import { setDescription } from '../../store/reducers/userSlice';
+import Loader from '../UI/Loader';
 
 type StepThreeProps = {
   changeActiveStep: (step: number) => void;
 };
 
 export default function StepThree({ changeActiveStep }: StepThreeProps) {
+  const { phone, email, nickname, firstName, lastName, gender } = useAppSelector((state) => state.userReducer);
+  const [isSuccess, setIsSuccess] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const { description } = useAppSelector((state) => state.userReducer);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useAppDispatch();
@@ -41,7 +45,24 @@ export default function StepThree({ changeActiveStep }: StepThreeProps) {
         description: watch('about'),
       })
     );
-    setIsModalOpen(true);
+
+    new Promise((resolve, reject) => {
+      setIsLoading(true);
+      const randomNumber = 100 * Math.round(Math.random());
+      setTimeout(() => {
+        if (randomNumber > 50) {
+          setIsSuccess(true);
+          resolve({ phone, email, nickname, firstName, lastName, gender, description });
+          setIsModalOpen(true);
+        } else {
+          setIsSuccess(false);
+          reject();
+          setIsModalOpen(true);
+        }
+      }, 2000);
+    }).finally(() => {
+      setIsLoading(false);
+    });
   };
 
   return (
@@ -60,7 +81,8 @@ export default function StepThree({ changeActiveStep }: StepThreeProps) {
           </Button>
         </div>
       </form>
-      {isModalOpen && <ResultWindow closeModal={closeModal} />}
+      {isLoading && <Loader />}
+      {isModalOpen && <ResultWindow isSuccess={isSuccess} closeModal={closeModal} />}
     </>
   );
 }
