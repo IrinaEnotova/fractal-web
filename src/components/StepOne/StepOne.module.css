@@ -1,0 +1,11 @@
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 90px;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,79 @@
+:root {
+  padding: 24px;
+  background-color: var(--bg-color);
+  font-family: 'TTTravels', Arial, Helvetica, sans-serif;
+  color: var(--text-white-mode);
+  --bg-color: #f4f4f5;
+  --black-alpha48: #0000007a;
+  --black-alpha16: #00000029;
+  --black-alpha8: #00000014;
+  --black-alpha4: #0000000a;
+  --blue-grey: #212830;
+  --white: #ffffff;
+  --gray: #cccccc;
+  --blue-light: #d5e4f7;
+  --purple: #5558fa;
+  --purple-hover: #8f91f7;
+  --text-white-mode: #333333;
+  --dot-color: #a6a6a6;
+  --line-color: #ebebeb;
+  --success: #05ae7126;
+  --cancel: #e84e5826;
+}
+
+@font-face {
+  font-family: 'TTTravels';
+  font-weight: 400;
+  src:
+    local('TTTravels'),
+    url(./fonts/TTTravels-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'TTTravels';
+  font-weight: 500;
+  src:
+    local('TTTravels'),
+    url(./fonts/TTTravels-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'TTTravels';
+  font-weight: 700;
+  src:
+    local('TTTravels'),
+    url(./fonts/TTTravels-DemiBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'TTTravels';
+  font-weight: 800;
+  src:
+    local('TTTravels'),
+    url(./fonts/TTTravels-Bold.ttf) format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'TTTravels', Arial, Helvetica, sans-serif;
+}
+
+#root {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+body {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}

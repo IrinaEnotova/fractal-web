@@ -1,0 +1,64 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 67px;
+}
+
+.stepper,
+.stepNumbers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stepper {
+  align-items: center;
+}
+
+.stepDot {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  border: none;
+  background-color: var(--dot-color);
+  z-index: 2;
+}
+
+.stepDotActive {
+  background-color: var(--purple);
+  background-image: url('/src/assets/dot-icon.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.stepDotCompleted {
+  background-color: var(--purple);
+  background-image: url('/src/assets/check-icon.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.stepNumbers {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.activeStep {
+  color: var(--purple);
+  font-weight: 800;
+}
+
+.stepLine {
+  height: 10px;
+  width: 100%;
+  background-color: var(--line-color);
+  margin-right: -2px;
+  margin-left: -2px;
+}
+
+.stepLineActive {
+  background-color: var(--purple);
+}

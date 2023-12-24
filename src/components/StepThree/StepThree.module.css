@@ -1,0 +1,19 @@
+.inputs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 87px;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.symbolCount {
+  position: absolute;
+  bottom: 2px;
+  right: 8px;
+  font-size: 12px;
+}
